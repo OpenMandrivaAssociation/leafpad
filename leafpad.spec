@@ -1,5 +1,5 @@
 %define name	leafpad
-%define version	0.8.9
+%define version	0.8.10
 %define section Applications/Editors
 %define title 	Leafpad
 
@@ -61,8 +61,22 @@ needs="x11" \
 icon="%name.png" \
 section="%section" \
 title="%title" \
-longtitle="%summary"
+longtitle="%summary" \
+xdg="true"
 EOF
+
+rm -rf %{buildroot}%{_datadir}/applications/*.desktop
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+[Desktop Entry]
+Name=leafpad
+Comment=Notepad clone
+Exec=leafpad
+Icon=leafpad
+Terminal=false
+Type=Application
+Categories=X-MandrivaLinux-MoreApplications-Editors;
+EOF
+
 
 # icon
 mkdir -p %buildroot/{%_liconsdir,%_iconsdir,%_miconsdir}
@@ -85,7 +99,8 @@ rm -rf %buildroot
 %doc COPYING README
 %{_bindir}/*
 %{_datadir}/pixmaps/*
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/Tango
+%{_datadir}/applications/*.desktop
 %_menudir/%name
 %_liconsdir/%name.png
 %_miconsdir/%name.png
