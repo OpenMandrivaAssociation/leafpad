@@ -1,5 +1,5 @@
 %define name	leafpad
-%define version	0.8.10
+%define version	0.8.12
 %define section Applications/Editors
 %define title 	Leafpad
 
@@ -23,9 +23,9 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	gtk2-devel
 
 %description
-Leafpad is a simple GTK+ based text editor. 
-The user interface is similar to "notepad", 
-and it aims to be lighter than GEdit and 
+Leafpad is a simple GTK+ based text editor.
+The user interface is similar to "notepad",
+and it aims to be lighter than GEdit and
 KWrite and to be as useful as them.
 
 Following features are intended...
@@ -34,10 +34,10 @@ Following features are intended...
     * Minimal menu item
     * No toolbar
     * Single document interface (SDI)
-    * Character coding auto detection 
-   
+    * Character coding auto detection
+
 %prep
-%setup -q 
+%setup -q
 
 #%patch0 -p0 -b .filechooser
 
@@ -99,9 +99,9 @@ rm -rf %buildroot
 %doc COPYING README
 %{_bindir}/*
 %{_datadir}/pixmaps/*
-%{_datadir}/icons/Tango
 %{_datadir}/applications/*.desktop
 %_menudir/%name
 %_liconsdir/%name.png
 %_miconsdir/%name.png
 %_iconsdir/%name.png
+%{_datadir}/icons/hicolor/*/apps/leafpad.*
