@@ -1,5 +1,5 @@
 %define name	leafpad
-%define version	0.8.12
+%define version	0.8.13
 %define section Applications/Editors
 %define title 	Leafpad
 
@@ -7,12 +7,12 @@ Summary:	Notepad clone
 Name:		%{name}
 Version:	%{version}
 Release:	%mkrel 1
-License:	GPL
+License:	GPLv2+
 
 Group:		Editors
 
 URL:		http://tarot.freeshell.org/leafpad/
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	http://download.savannah.gnu.org/releases/leafpad/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
 Source2:	%{name}-32.png
 Source3:	%{name}-16.png
@@ -52,32 +52,6 @@ rm -rf %buildroot
 
 %find_lang %name --with-gnome
 
-# menu
-mkdir -p %buildroot/%_menudir
-cat > %buildroot/%_menudir/%name << EOF
-?package(%name): \
-command="%_bindir/%name" \
-needs="x11" \
-icon="%name.png" \
-section="%section" \
-title="%title" \
-longtitle="%summary" \
-xdg="true"
-EOF
-
-rm -rf %{buildroot}%{_datadir}/applications/*.desktop
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
-[Desktop Entry]
-Name=leafpad
-Comment=Notepad clone
-Exec=leafpad
-Icon=leafpad
-Terminal=false
-Type=Application
-Categories=X-MandrivaLinux-MoreApplications-Editors;
-EOF
-
-
 # icon
 mkdir -p %buildroot/{%_liconsdir,%_iconsdir,%_miconsdir}
 #install -m 644 src/pixmaps/%name.png %buildroot/%_datadir/pixmaps/%name.png
@@ -100,7 +74,6 @@ rm -rf %buildroot
 %{_bindir}/*
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*.desktop
-%_menudir/%name
 %_liconsdir/%name.png
 %_miconsdir/%name.png
 %_iconsdir/%name.png
