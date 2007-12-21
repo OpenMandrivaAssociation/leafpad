@@ -18,6 +18,7 @@ Source2:	%{name}-32.png
 Source3:	%{name}-16.png
 
 Patch0:		leafpad-0.7.0-gtk2.4-filechooser.patch.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtk2-devel
 
