@@ -1,6 +1,5 @@
 %define name	leafpad
-%define version	0.8.13
-%define section Applications/Editors
+%define version	0.8.14
 %define title 	Leafpad
 
 Summary:	Notepad clone
@@ -17,7 +16,6 @@ Source1:	%{name}.png
 Source2:	%{name}-32.png
 Source3:	%{name}-16.png
 
-Patch0:		leafpad-0.7.0-gtk2.4-filechooser.patch.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtk2-devel
@@ -39,11 +37,8 @@ Following features are intended...
 %prep
 %setup -q
 
-#%patch0 -p0 -b .filechooser
-
 %build
 %configure2_5x
-
 %make WARN_CFLAGS=""
 
 %install
