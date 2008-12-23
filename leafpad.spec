@@ -12,10 +12,7 @@ Group:		Editors
 
 URL:		http://tarot.freeshell.org/leafpad/
 Source0:	http://download.savannah.gnu.org/releases/leafpad/%{name}-%{version}.tar.gz
-Source1:	%{name}.png
-Source2:	%{name}-32.png
-Source3:	%{name}-16.png
-
+Patch0:		leafpad-0.8.16-fix-str-fmt.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtk2-devel
@@ -36,6 +33,7 @@ Following features are intended...
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x
@@ -46,13 +44,6 @@ rm -rf %buildroot
 %makeinstall_std
 
 %find_lang %name --with-gnome
-
-# icon
-mkdir -p %buildroot/{%_liconsdir,%_iconsdir,%_miconsdir}
-#install -m 644 src/pixmaps/%name.png %buildroot/%_datadir/pixmaps/%name.png
-install -m 644 %SOURCE1 %buildroot/%_miconsdir/%name.png
-install -m 644 %SOURCE2 %buildroot/%_liconsdir/%name.png
-install -m 644 %SOURCE3 %buildroot/%_iconsdir/%name.png
 
 %if %mdkversion < 200900
 %post
@@ -73,7 +64,4 @@ rm -rf %buildroot
 %{_bindir}/*
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*.desktop
-%_liconsdir/%name.png
-%_miconsdir/%name.png
-%_iconsdir/%name.png
 %{_datadir}/icons/hicolor/*/apps/leafpad.*
