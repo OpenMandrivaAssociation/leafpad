@@ -1,5 +1,5 @@
 %define name	leafpad
-%define version	0.8.15
+%define version	0.8.16
 %define title 	Leafpad
 
 Summary:	Notepad clone
