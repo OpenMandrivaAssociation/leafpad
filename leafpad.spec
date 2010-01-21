@@ -1,11 +1,11 @@
 %define name	leafpad
 %define version	0.8.17
-%define title 	Leafpad
+%define	title	Leafpad
 
 Summary:	Notepad clone
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 
 Group:		Editors
