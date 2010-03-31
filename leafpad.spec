@@ -5,7 +5,7 @@
 Summary:	Notepad clone
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 
 Group:		Editors
@@ -13,6 +13,7 @@ Group:		Editors
 URL:		http://tarot.freeshell.org/leafpad/
 Source0:	http://download.savannah.gnu.org/releases/leafpad/%{name}-%{version}.tar.gz
 Patch0:		leafpad-0.8.16-fix-str-fmt.patch
+Patch1:		leafpad-0.8.17-fix-desktop.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtk2-devel
@@ -34,6 +35,7 @@ Following features are intended...
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p0
 
 %build
 %configure2_5x
