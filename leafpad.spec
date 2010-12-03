@@ -5,7 +5,7 @@
 Summary:	Notepad clone
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPLv2+
 
 Group:		Editors
