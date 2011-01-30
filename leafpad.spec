@@ -17,6 +17,7 @@ Patch1:		leafpad-0.8.17-fix-desktop.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtk2-devel
+BuildRequires:	intltool
 
 %description
 Leafpad is a simple GTK+ based text editor.
