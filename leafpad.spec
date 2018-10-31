@@ -1,7 +1,7 @@
 Summary:	Notepad clone
 Name:		leafpad
 Version:	0.8.18.1
-Release:	13
+Release:	14
 License:	GPLv2+
 Group:		Editors
 Url:		http://tarot.freeshell.org/leafpad/
