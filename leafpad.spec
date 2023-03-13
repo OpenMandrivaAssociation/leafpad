@@ -31,11 +31,11 @@ Following features are intended...
 %autopatch -p1
 
 %build
-%configure2_5x
-%make WARN_CFLAGS=""
+%configure
+%make_build WARN_CFLAGS=""
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} --with-gnome
 
@@ -45,4 +45,5 @@ Following features are intended...
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*.desktop
 %{_iconsdir}/hicolor/*/apps/leafpad.*
+%{_mandir}/man1/leafpad.1.zst
 
