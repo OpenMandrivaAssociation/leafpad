@@ -45,5 +45,5 @@ Following features are intended...
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*.desktop
 %{_iconsdir}/hicolor/*/apps/leafpad.*
-%{_mandir}/man1/leafpad.1.zst
+%{_mandir}/man1/leafpad.1.*
 
