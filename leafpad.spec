@@ -4,7 +4,7 @@ Version:	0.8.19
 Release:	2
 License:	GPLv2+
 Group:		Editors
-Url:		http://tarot.freeshell.org/leafpad/
+Url:		https://tarot.freeshell.org/leafpad/
 Source0:	http://download.savannah.gnu.org/releases/leafpad/%{name}-%{version}.tar.gz
 Patch0:		leafpad-0.8.16-fix-str-fmt.patch
 Patch1:		leafpad-0.8.17-fix-desktop.patch
