@@ -9,6 +9,11 @@ Source0:	http://download.savannah.gnu.org/releases/leafpad/%{name}-%{version}.ta
 Patch0:		leafpad-0.8.16-fix-str-fmt.patch
 Patch1:		leafpad-0.8.17-fix-desktop.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(gtk+-2.0)
 
